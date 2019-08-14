@@ -44,12 +44,12 @@ let text = 	[
 	}
 ];
 
-var output = document.getElementById("output");
+var output = document.getElementById("menu-output");
 // var divs = document.getElementByTagName("div");
 function listMenu(menu) {
   let menuList = [];
   for (let i=0; i<menu.length; i++) {
-  	menuList.push("<div><h1>" + menu[i].name + "</h1><p>" + menu[i].description + " $" + menu[i].price + "</p></div>");
+  	menuList.push("<div><h2>" + menu[i].name + "</h2><p>" + menu[i].description + "</p><p>$" + menu[i].price + "</p></div>");
   }
   menuList = menuList.join("");
   output.innerHTML = menuList;

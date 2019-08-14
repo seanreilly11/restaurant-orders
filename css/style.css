@@ -95,12 +95,14 @@ nav a{
 	min-width: 1000px;
 	display: flex;
 	flex-direction: column;
+	padding: 1em 0;
 }
 
 .location-wrapper:nth-child(even){
 	background: #e1e1e1; 
 }
 
+/*locations styling*/
 .location-container{
 	width: 60%;
 	min-width: 1000px;
@@ -137,27 +139,46 @@ table td:nth-child(even){
 	flex: 1;
 }
 
-#output div{
-	padding: 1em 0; 
+/*menu output*/
+#menu-output div{
+	padding: 2em 0; 
+	display: block;
 }
 
+#menu-output h2{ 
+	float: left;
+	width: 25%;
+}
+
+#menu-output div p{
+	text-align: left;
+}
+
+#menu-output div p:nth-child(3){
+	font-weight: bold;	
+}
+
+/*meals sections*/
 .section{
 	width: 100vw;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 40vh;
+	height: 35vh;
 }
 
 .section__heading{
 	font-size: 2.5em;
 	font-weight: 500;
+	text-transform: uppercase;
 }
 
 .anchor-noline{
 	color: black;
 	text-decoration: none;
 }
+
+/*section backgrounds*/
 .breakfast{
 	background-image: radial-gradient(rgba(255,255, 255, .5), rgba(255, 255, 255, 0.4)),url("../images/brekkie.jpg");
 	background-size: cover;
