@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+html{
+	font-size: 20px;
+	width: 100vw;
+}
+
+body{
+}
+
+.banner{
+	background-image: radial-gradient(rgba(255,255, 255, 1), rgba(255, 255, 255, 0.7), rgba(255,255, 255, .4)),url("../images/banner.jpg");
+	background-position: left top;
+	background-size: cover;
+	min-height: 100vh;
+}
+
+header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 2rem;
+	background: linear-gradient(to bottom,rgba(255,255,255,.8), rgba(255,255,255,0.6), rgba(255,255,255,0));
+}
+
+nav{
+	flex: .9;
+	width: 50%;
+}
+
+nav ul{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	list-style-type: none; 
+}
+
+nav li{
+	padding: 0rem;
+}
+nav a{
+	text-decoration: none;
+	color: #000;
+}
+
+.active{
+	border-bottom: 5px solid #fcecb1;
+}
+
+.orderButton{
+	font-family: 'Poppins', sans-serif;
+	font-size: 1rem;
+	background: transparent;
+	border: 2px solid #000;
+	padding: .8rem;
+}
+
+.orderButton a{
+	color: #000;
+	text-decoration: none;
+}
+
+.banner-wrapper{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 75vh;
+}
+
+.banner-text{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 1rem;
+}
+
+.wrapper{
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container{
+	width: 60%;
+	min-width: 1000px;
+	display: flex;
+	flex-direction: column;
+}
+
+.location-wrapper:nth-child(even){
+	background: #e1e1e1; 
+}
+
+.location-container{
+	width: 60%;
+	min-width: 1000px;
+	padding: 2rem 2rem 3rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.location__name{
+	padding: 1rem 0;
+	width: 100%;
+	clear: both;
+	text-transform: uppercase;
+}
+
+.location__info{
+	font-weight: 700;
+}
+
+table td{
+	padding: 5px 0;
+}
+
+table td:nth-child(even){
+	padding: 5px 10px;
+}
+
+.branch-info{
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.hours, .address, .phone{
+	flex: 1;
+}
+
+#output div{
+	padding: 1em 0; 
+}
+
+.section{
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 40vh;
+}
+
+.section__heading{
+	font-size: 2.5em;
+	font-weight: 500;
+}
+
+.anchor-noline{
+	color: black;
+	text-decoration: none;
+}
+.breakfast{
+	background-image: radial-gradient(rgba(255,255, 255, .5), rgba(255, 255, 255, 0.4)),url("../images/brekkie.jpg");
+	background-size: cover;
+	background-position: left center;
+}
+
+.lunch{
+	background-image: radial-gradient(rgba(255,255, 255, .5), rgba(255, 255, 255, 0.4)),url("../images/lunch.jpg");
+	background-size: cover;
+	background-position: left center;
+}
+
+.dinner{
+	background-image: radial-gradient(rgba(255,255, 255, .5), rgba(255, 255, 255, 0.4)),url("../images/dinner.jpg");
+	background-size: cover;
+	background-position: left center;
+}

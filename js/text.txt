@@ -1,0 +1,32 @@
+[	
+	{
+	"name":"Chips",
+	"description": "Crispy chips with a side of aioi",
+	"price": "$4.00"
+	},
+	{
+	"name":"Wedges",
+	"description": "Crispy wedges with a side of BBQ sauce",
+	"price": "$4.50"
+	},
+	{
+	"name":"Tacos",
+	"description": "Fresh chicken or beef tacos with your choice of toppings",
+	"price": "$6.00"
+	},
+	{
+	"name":"Beef Burger",
+	"description": "Succulent beef pattie topped with fresh lettuce and bacon",
+	"price": "$11.00"
+	},
+	{
+	"name":"Chicken Burger",
+	"description": "Juicy chicken breast with lettuce and camembert",
+	"price": "$12.00"
+	},
+	{
+	"name":"Ribeye Steak",
+	"description": "Succulent ribeye steak with garlic butter",
+	"price": "$24.00"
+	}
+]
