@@ -9,6 +9,7 @@
 html{
 	font-size: 20px;
 	width: 100vw;
+	scroll-behavior: smooth;
 }
 
 body{
@@ -50,7 +51,7 @@ nav a{
 }
 
 .active{
-	border-bottom: 5px solid #fcecb1;
+	border-bottom: 5px solid #cbae86; /*fcecb1*/
 }
 
 .orderButton{
@@ -140,14 +141,39 @@ table td:nth-child(even){
 }
 
 /*menu output*/
+#menu-output{
+	border-left: 2px solid #cbae86;
+	margin-left: -100px;
+	padding-left: 100px; 
+}
+
 #menu-output div{
 	padding: 2em 0; 
 	display: block;
 }
 
+#menu-output h1{ 
+	position: relative;
+	float: left;
+	width: 100%;
+	padding: 1.5rem 0;
+	font-size: 2.5rem;
+}
+
+#menu-output h1::after{ 
+	content: '';
+	position: absolute;
+	display: inline-block;
+	top: 70%;
+	left: 0;
+	width: 100px;
+	height: 2px;
+	background: #cbae86;
+}
+
 #menu-output h2{ 
 	float: left;
-	width: 25%;
+	width: 30%;
 }
 
 #menu-output div p{
@@ -156,6 +182,31 @@ table td:nth-child(even){
 
 #menu-output div p:nth-child(3){
 	font-weight: bold;	
+}
+
+.fullsize{
+	min-height: 100vh;
+}
+
+/*hidden menu*/
+.hidden-nav{
+	position: fixed;
+	display: block;
+	top: 50%;
+	left: 2%;
+	transform: translateY(-50%);
+	transition: all 0.3s ease-in-out;
+}
+
+.hidden-nav ul{
+	list-style-type: none;
+	display: block;
+}
+
+.hidden-nav ul li{
+	padding: .5rem;
+	color: #cbae86;
+	font-size: 2rem; 
 }
 
 /*meals sections*/
