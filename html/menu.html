@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Restaurant Ordering - Menu</title>
-    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/sass.css" type="text/css">
     <script src="https://kit.fontawesome.com/6c7bb61f4b.js"></script>
 </head>
 <body>
@@ -22,21 +22,32 @@
             <button class="orderButton">ORDER NOW</button>
         </a>
     </header>
+    <!-- menu sections -->
     <div class="menu-nav">
-        <a href="#menu-output" class="anchor-noline"><section class="section breakfast" id="brek"><h1 class="section__heading">Breakfast</h1></section></a>
-        <a href="#menu-output" class="anchor-noline"><section class="section lunch" id="lunch"><h1 class="section__heading">Lunch</h1></section></a>
-        <a href="#menu-output" class="anchor-noline"><section class="section dinner" id="din"><h1 class="section__heading">Dinner</h1></section></a>
+        <a href="#scrollTrig" class="anchor-noline"><section class="section breakfast" id="brek"><h1 class="section__heading">Breakfast</h1></section></a>
+        <a href="#scrollTrig" class="anchor-noline"><section class="section lunch" id="lunch"><h1 class="section__heading">Lunch</h1></section></a>
+        <a href="#scrollTrig" class="anchor-noline"><section class="section dinner" id="din"><h1 class="section__heading">Dinner</h1></section></a>
     </div>
+
+    <!-- output content -->
     <div class="wrapper">
-        <div class="container" id="contain-menu">
+        <div class="container" id="scrollTrig">
             <div id="menu-output"></div>
         </div>
     </div>
-    <div class="hidden-nav" id="hidden-nav">
+
+    <!-- hidden nav -->
+    <div class="hidden-nav animationClass" id="hidden-nav">
         <ul>
-            <a href=""><li><i class="fas fa-coffee"></i></li></a>
-            <a href=""><li><i class="fas fa-hotdog"></i></li></a>
-            <a href=""><li><i class="fas fa-hamburger"></i></li></a>
+            <div class="hidden-nav-list" id="brekkie">
+                <li><i class="fas fa-coffee"></i></li><p class="hidden-nav-title">Breakfast</p>
+            </div>
+            <div class="hidden-nav-list"  id="lunchie">
+                <li><i class="fas fa-hotdog"></i></li><p class="hidden-nav-title">Lunch</p>
+            </div>
+            <div class="hidden-nav-list"  id="dinnie">
+                <li><i class="fas fa-hamburger"></i></li><p class="hidden-nav-title">Dinner</p>
+            </div>
         </ul>
     </div>
     <script src="../js/main.js"></script>

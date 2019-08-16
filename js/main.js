@@ -105,25 +105,13 @@ var output = document.getElementById("menu-output");
 var brek = document.getElementById("brek");
 var lun = document.getElementById("lunch");
 var din = document.getElementById("din");
+var brekkie = document.getElementById("brekkie");
+var lunchie = document.getElementById("lunchie");
+var dinnie = document.getElementById("dinnie");
 var btn = "";
 
 
-function listMenu(menu) {
-	let menuList = [];
-	if (btn === "brek") {
-		menuList.push("<h1>Breakfast</h1>");
-	}else if (btn === "lun") {
-		menuList.push("<h1>Lunch</h1>");
-	}else if (btn === "din") {
-		menuList.push("<h1>Dinner</h1>");
-	}
-	for (let i=0; i<menu.length; i++) {
-		menuList.push("<div><h2>" + menu[i].name + "</h2><p>" + menu[i].description + "</p><p>$" + menu[i].price + "</p></div>");
-	}
-	menuList = menuList.join("");
-	output.innerHTML = menuList;
-}
-
+// event listeners for buttons to print right menu
 brek.addEventListener("click",function(){
 	btn = "brek";
 	output.className = "fullsize"
@@ -139,25 +127,51 @@ din.addEventListener("click",function(){
 	output.className = "fullsize"
 	listMenu(dinner);
 });
+brekkie.addEventListener("click",function(){
+	btn = "brek";
+	output.className = "fullsize"
+	listMenu(breakfast);
+});
+lunchie.addEventListener("click",function(){
+	btn = "lun";
+	output.className = "fullsize"
+	listMenu(lunch);
+});
+dinnie.addEventListener("click",function(){
+	btn = "din";
+	output.className = "fullsize"
+	listMenu(dinner);
+});
 
 // show hidden nav
-var outputTop = document.querySelector('#menu-output').getBoundingClientRect().top
+var outputTop = document.querySelector('#scrollTrig').getBoundingClientRect().top
 window.onscroll = function() {
 	var currentY = window.pageYOffset;
 	if (outputTop < currentY) {
-    document.getElementsByClassName("hidden-nav").style.display = "block";
-  } else {
-    document.getElementsByClassName("hidden-nav").style.display = "none";
-  }
+		document.getElementById("hidden-nav").style.opacity = "1";
+		document.getElementById("hidden-nav").classList.add("animationClassIn");
+		document.getElementById("hidden-nav").classList.remove("animationClassOut");
+	} else {
+		document.getElementById("hidden-nav").style.opacity = "0";
+		document.getElementById("hidden-nav").classList.remove("animationClassIn");
+		document.getElementById("hidden-nav").classList.add("animationClassOut");
+	}
+}
 
-
-
-
-var thresh = window.pageYOffset;
-var currentScrollPos = window.pageYOffset;
-  if (thresh > currentScrollPos) {
-    document.getElementsByClassName("hidden-nav").style.display = "block";
-  } else {
-    document.getElementsByClassName("hidden-nav").style.display = "none";
-  }
+// print menu function
+function listMenu(menu) {
+	document.getElementById("hidden-nav").style.opacity = "1";
+	let menuList = [];
+	if (btn === "brek") {
+		menuList.push("<h1>Breakfast</h1>");
+	}else if (btn === "lun") {
+		menuList.push("<h1>Lunch</h1>");
+	}else if (btn === "din") {
+		menuList.push("<h1>Dinner</h1>");
+	}
+	for (let i=0; i<menu.length; i++) {
+		menuList.push("<div><h2>" + menu[i].name + "</h2><p>" + menu[i].description + "</p><p>$" + menu[i].price + "</p></div>");
+	}
+	menuList = menuList.join("");
+	output.innerHTML = menuList;
 }
