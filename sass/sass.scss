@@ -27,6 +27,30 @@ header{
 	background: linear-gradient(to bottom,rgba(255,255,255,.8), rgba(255,255,255,0.6), rgba(255,255,255,0));
 }
 
+.wrapper{
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container{
+	width: 60%;
+	min-width: 1000px;
+	margin-bottom: 0;
+	display: flex;
+	flex-direction: column;
+	padding: 1em 0;
+}
+
+.grid-container{
+	margin: auto;
+	margin-bottom: 5rem;
+	width: 80%;
+	display: grid;
+}
+
+// navigation
 nav{
 	flex: .9;
 	width: 50%;
@@ -46,7 +70,7 @@ nav{
 }
 
 .active{
-	border-bottom: 5px solid #cbae86; /*fcecb1*/
+	border-bottom: 5px solid #cbae86;
 }
 
 .orderButton{
@@ -61,6 +85,7 @@ nav{
 	}
 }
 
+// home page banner
 .banner-wrapper{
 	display: flex;
 	justify-content: center;
@@ -78,67 +103,12 @@ nav{
 	padding: 1rem;
 }
 
-.wrapper{
-	width: 100vw;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.container{
-	width: 60%;
-	min-width: 1000px;
-	display: flex;
-	flex-direction: column;
-	padding: 1em 0;
-}
-
-.location-wrapper:nth-child(even){
-	background: #e1e1e1; 
-}
-
-/*locations styling*/
-.location-container{
-	width: 60%;
-	min-width: 1000px;
-	padding: 2rem 2rem 3rem;
-	display: flex;
-	flex-direction: column;
-}
-
-.location__name{
-	padding: 1rem 0;
-	width: 100%;
-	clear: both;
-	text-transform: uppercase;
-}
-
-.location__info{
-	font-weight: 700;
-}
-table {
-	td{
-		padding: 5px 0;
-		&:nth-child(even){
-			padding: 5px 10px;
-		}
-	}
-}
-
-.branch-info{
-	display: flex;
-	justify-content: space-evenly;
-}
-
-.hours, .address, .phone{
-	flex: 1;
-}
-
+// menu page
 /*menu output*/
 #menu-output{
 	border-left: 2px solid #cbae86;
 	margin-left: -100px;
-	padding-left: 100px; 
+	padding-left: 100px;
 	div{
 		padding: 2em 0; 
 		display: block;
@@ -232,12 +202,22 @@ table {
 	justify-content: center;
 	align-items: center;
 	height: 35vh;
+	border: none;
+	outline: none;
+	transition: transform 1s ease-in-out;
+	&:hover{
+		transform: scale(1.05);
+		&> .section__heading{
+			transform: scale(1.1);
+		}
+	}
 }
 
 .section__heading{
 	font-size: 2.5em;
 	font-weight: 500;
 	text-transform: uppercase;
+	transition: transform 1s ease-in-out;
 }
 
 .anchor-noline{
@@ -262,4 +242,111 @@ table {
 	background-image: radial-gradient(rgba(255,255, 255, .5), rgba(255, 255, 255, 0.4)),url("../images/dinner.jpg");
 	background-size: cover;
 	background-position: left center;
+}
+
+// locations page
+/*locations styling*/
+.location-grid-container{
+  	grid-template-columns: repeat(auto-fit, minmax(600px,1fr));
+  	grid-gap: 2rem 1rem;
+}
+
+.location-card{
+	text-align: center;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,.5);
+	border-radius: 15px;
+	transition: transform 1s;
+	&:hover{
+		transform: translateY(-.5rem);
+	}
+}
+
+.location__name{
+	padding: 2rem;
+	width: 100%;
+	color: white;
+	text-align: center;
+	clear: both;
+	text-transform: uppercase;
+}
+
+#welly{
+	background-image: radial-gradient(rgba(0,0, 0, 0.4), rgba(0,0, 0, .4)),url("../images/welly.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+#upper{
+	background-image: radial-gradient(rgba(0,0, 0, 0.4), rgba(0,0, 0, .4)),url("../images/upperhutt.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+#akl{
+	background-image: radial-gradient(rgba(0,0, 0, 0.4), rgba(0,0, 0, .4)),url("../images/akl.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+#chch{
+	background-image: radial-gradient(rgba(0,0, 0, 0.4), rgba(0,0, 0, .4)),url("../images/chch.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+.location__info{
+	font-weight: 700;
+	text-decoration: underline;
+}
+
+table {
+	margin: auto; 
+	td{
+		padding: 5px 0;
+		&:nth-child(even){
+			padding: 5px 10px;
+		}
+	}
+}
+
+.branch-info{
+	display: flex;
+	justify-content: space-evenly;
+	padding: 1rem 0; 
+}
+
+.hours, .address, .phone{
+	flex: 1;
+}
+
+// contact page
+.team-grid-container{
+	grid-template-columns: repeat(auto-fit, minmax(12rem,1fr));
+  	grid-gap: 2rem 1rem;
+}
+
+.team-card{
+	text-align: center;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,.5);
+	border-radius: 15px;
+	transition: transform 1s;
+	&:hover{
+		transform: translateY(-.5rem);
+	}
+}
+
+.team__name{
+	font-size: 1.5rem;
+	color: black;
+	text-transform: uppercase;
+}
+
+.team__position{
+	font-size: .8rem;
 }

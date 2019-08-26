@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Restaurant Ordering - Locations</title>
-	<link rel="stylesheet" href="../css/style.css" type="text/css">
+	<link rel="stylesheet" href="../css/sass.css" type="text/css">
 </head>
 <body>
 	<header>
@@ -14,30 +14,17 @@
 				<li><a href="menu.html">MENU</a></li>
 				<li class="active"><a href="locations.html">LOCATIONS</a></li>
 				<li><a href="functions.html">FUNCTIONS & CATERING</a></li>
-				<li><a href="contact.html">CONTACT</a></li>
+				<li><a href="contact.html">THE TEAM</a></li>
 			</ul>
 		</nav>
 		<a href="order.html"><button class="orderButton">ORDER NOW</button></a>
 	</header>
-	<div class="wrapper location-wrapper">
-		<div class="location-container">
-			<div class="location">
+	<div class="location-grid-container grid-container">
+		<div class="location-card">
+			<div class="location" id="welly">
 				<h1 class="location__name">WELLINGTON CITY</h1>
 			</div>
 			<div class="branch-info">
-				<div class="hours">
-					<h3 class="location__info">Opening Hours</h3>
-					<table>
-						<tr>
-							<td>Sun-Thurs:</td>
-							<td>11am-9pm</td>
-						</tr>
-						<tr>
-							<td>Fri-Sat:</td>
-							<td>11am-11pm</td>
-						</tr>
-					</table>
-				</div>
 				<div class="address">
 					<h3 class="location__info">Address</h3>
 					<p>138 Cuba St, Wellington</p>
@@ -47,99 +34,105 @@
 					<p>03 544 5847</p>
 				</div>
 			</div>
+			<div class="hours">
+				<h3 class="location__info">Opening Hours</h3>
+				<table>
+					<tr>
+						<td>Sun-Thurs:</td>
+						<td>11am-9pm</td>
+					</tr>
+					<tr>
+						<td>Fri-Sat:</td>
+						<td>11am-11pm</td>
+					</tr>
+				</table>
+			</div>
 		</div>
-	</div>
-	<div class="wrapper location-wrapper">
-		<div class="location-container">
-			<div class="location">
+		<div class="location-card">
+			<div class="location" id="upper">
 				<h1 class="location__name">Upper hutt</h1>
 			</div>
 			<div class="branch-info">
-				<div class="hours">
-					<h3 class="location__info">Opening Hours</h3>
-					<table>
-						<tr>
-							<td>Sun-Thurs:</td>
-							<td>11am-9pm</td>
-						</tr>
-						<tr>
-							<td>Fri-Sat:</td>
-							<td>11am-11pm</td>
-						</tr>
-					</table>
-				</div>
 				<div class="address">
 					<h3 class="location__info">Address</h3>
-					<p>138 Cuba St, Wellington</p>
+					<p>43 Main St, Upper Hutt</p>
 				</div>
 				<div class="phone">
 					<h3 class="location__info">Phone Number</h3>
 					<p>03 544 5847</p>
 				</div>
+			</div>				
+			<div class="hours">
+				<h3 class="location__info">Opening Hours</h3>
+				<table>
+					<tr>
+						<td>Sun-Thurs:</td>
+						<td>11am-8.30pm</td>
+					</tr>
+					<tr>
+						<td>Fri-Sat:</td>
+						<td>11am-10pm</td>
+					</tr>
+				</table>
 			</div>
 		</div>
-	</div><div class="wrapper location-wrapper">
-		<div class="location-container">
-			<div class="location">
+		<div class="location-card">
+			<div class="location" id="akl">
 				<h1 class="location__name">Auckland</h1>
 			</div>
 			<div class="branch-info">
-				<div class="hours">
-					<h3 class="location__info">Opening Hours</h3>
-					<table>
-						<tr>
-							<td>Sun-Thurs:</td>
-							<td>11am-9pm</td>
-						</tr>
-						<tr>
-							<td>Fri-Sat:</td>
-							<td>11am-11pm</td>
-						</tr>
-					</table>
-				</div>
 				<div class="address">
 					<h3 class="location__info">Address</h3>
-					<p>138 Cuba St, Wellington</p>
+					<p>117 Victoria St W, Auckland</p>
 				</div>
 				<div class="phone">
 					<h3 class="location__info">Phone Number</h3>
 					<p>03 544 5847</p>
 				</div>
 			</div>
+			<div class="hours">
+				<h3 class="location__info">Opening Hours</h3>
+				<table>
+					<tr>
+						<td>Sun-Thurs:</td>
+						<td>11am-9pm</td>
+					</tr>
+					<tr>
+						<td>Fri-Sat:</td>
+						<td>11am-11pm</td>
+					</tr>
+				</table>
+			</div>
 		</div>
-	</div><div class="wrapper location-wrapper">
-		<div class="location-container">
-			<div class="location">
+		<div class="location-card">
+			<div class="location" id="chch">
 				<h1 class="location__name">Christchurch</h1>
 			</div>
 			<div class="branch-info">
-				<div class="hours">
-					<h3 class="location__info">Opening Hours</h3>
-					<table>
-						<tr>
-							<td>Sun-Thurs:</td>
-							<td>11am-9pm</td>
-						</tr>
-						<tr>
-							<td>Fri-Sat:</td>
-							<td>11am-11pm</td>
-						</tr>
-					</table>
-				</div>
 				<div class="address">
 					<h3 class="location__info">Address</h3>
-					<p>138 Cuba St, Wellington</p>
+					<p>296 Montreal St, Christchurch</p>
 				</div>
 				<div class="phone">
 					<h3 class="location__info">Phone Number</h3>
 					<p>03 544 5847</p>
 				</div>
 			</div>
+			<div class="hours">
+				<h3 class="location__info">Opening Hours</h3>
+				<table>
+					<tr>
+						<td>Sun-Thurs:</td>
+						<td>11am-9pm</td>
+					</tr>
+					<tr>
+						<td>Fri-Sat:</td>
+						<td>11am-11pm</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 	</div>
-	<footer>
-		
-	</footer>
 </body>
 </html>
 
