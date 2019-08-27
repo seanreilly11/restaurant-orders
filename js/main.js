@@ -170,8 +170,12 @@ function listMenu(menu) {
 		menuList.push("<h1>Dinner</h1>");
 	}
 	for (let i=0; i<menu.length; i++) {
-		menuList.push("<div><h2>" + menu[i].name + "</h2><p>" + menu[i].description + "</p><p>$" + menu[i].price + "</p></div>");
+		menuList.push("<div class="+"thisClass"+"><h2>" + menu[i].name + "</h2><p>" + menu[i].description + "</p><p>$" + menu[i].price + "</p><button onclick="+"addToCart()"+">Add To Cart</button></div>");
 	}
 	menuList = menuList.join("");
 	output.innerHTML = menuList;
+}
+
+function addToCart(){
+	console.log("Added to cart");
 }

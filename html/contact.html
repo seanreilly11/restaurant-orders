@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Restaurant Ordering - The Team</title>
+	<title>Restaurant Ordering - Contact Us</title>
 	<link rel="stylesheet" href="../css/sass.css" type="text/css">
 </head>
 <body>
@@ -14,110 +14,46 @@
 				<li><a href="menu.html">MENU</a></li>
 				<li><a href="locations.html">LOCATIONS</a></li>
 				<li><a href="functions.html">FUNCTIONS & CATERING</a></li>
-				<li class="active"><a href="contact.html">THE TEAM</a></li>
+				<li><a href="team.html">The Team</a></li>
+				<li class="active"><a href="contact.html">Contact</a></li>
 			</ul>
 		</nav>
 		<a href="order.html"><button class="orderButton">ORDER NOW</button></a>
 	</header>
-	<div class="team-grid-container grid-container">
-		<div class="team-card">
-			<div class="team__image">
-				<img src="" alt="">
+	<div class="wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="column">
+					<label for="name">Name</label>
+					<input type="text" id="name" placeholder="Full Name">
+				</div>
+				<div class="column">
+					<label for="email">Email</label>
+					<input type="text" id="email" placeholder="Email Address">
+				</div>
 			</div>
-			<div class="team">
-				<h1 class="team__name">Trevor Wright</h1>
-			</div>
-			<div class="position">
-				<h3 class="team__position">Restaurant Manager</h3>
-			</div>
-		</div>
-		<div class="team-card">
-			<div class="team__image">
-				<img src="" alt="">
-			</div>
-			<div class="team">
-				<h1 class="team__name">Gregor Johnson</h1>
-			</div>
-			<div class="position">
-				<h3 class="team__position">Executive Chef</h3>
-			</div>
-		</div>
-		<div class="team-card">
-			<div class="team__image">
-				<img src="" alt="">
-			</div>
-			<div class="team">
-				<h1 class="team__name">Jasmin Easton</h1>
-			</div>
-			<div class="position">
-				<h3 class="team__position">Host</h3>
-			</div>
-		</div>
-		<div class="team-card">
-			<div class="team__image">
-				<img src="" alt="">
-			</div>
-			<div class="team">
-				<h1 class="team__name">Kali Glenn</h1>
-			</div>
-			<div class="position">
-				<h3 class="team__position">Host</h3>
-			</div>
-		</div>
-		<div class="team-card">
-			<div class="team__image">
-				<img src="" alt="">
-			</div>
-			<div class="team">
-				<h1 class="team__name">Arron Chavez</h1>
-			</div>
-			<div class="position">
-				<h3 class="team__position">Server</h3>
-			</div>
-		</div>
-		<div class="team-card">
-			<div class="team__image">
-				<img src="" alt="">
-			</div>
-			<div class="team">
-				<h1 class="team__name">Milli Herbert</h1>
-			</div>
-			<div class="position">
-				<h3 class="team__position">Server</h3>
-			</div>
-		</div>
-		<div class="team-card">
-			<div class="team__image">
-				<img src="" alt="">
-			</div>
-			<div class="team">
-				<h1 class="team__name">Britney Mercer</h1>
-			</div>
-			<div class="position">
-				<h3 class="team__position">Server</h3>
-			</div>
-		</div>
-		<div class="team-card">
-			<div class="team__image">
-				<img src="" alt="">
-			</div>
-			<div class="team">
-				<h1 class="team__name">Cecelia Landry</h1>
-			</div>
-			<div class="position">
-				<h3 class="team__position">Bartender</h3>
-			</div>
-		</div>
-		<div class="team-card">
-			<div class="team__image">
-				<img src="" alt="">
-			</div>
-			<div class="team">
-				<h1 class="team__name">Sean Hess</h1>
-			</div>
-			<div class="position">
-				<h3 class="team__position">Bartender</h3>
-			</div>
+
+			<label for="purpose">Purpose</label>
+			<select name="purpose" id="purpose">
+				<option value="none">Please Select Purpose</option>
+				<option value="welly">Functions/Catering</option>
+				<option value="upper">Locations</option>
+				<option value="akl">Other</option>
+			</select>
+
+			<label for="location">Location</label>
+			<select name="location" id="location">
+				<option value="none">Please Select Location</option>
+				<option value="welly">Wellington</option>
+				<option value="upper">Upper Hutt</option>
+				<option value="akl">Auckland</option>
+				<option value="chch">Christchurch</option>
+			</select>
+			
+			<label for="message">Message</label>
+			<textarea name="message" id="message" cols="30" rows="10" placeholder="Please enter your message"></textarea>
+
+			<button class="submitBtn">Submit</button>	
 		</div>
 	</div>
 </body>

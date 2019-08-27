@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
-*{
+*, *::after, *::before{
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
@@ -66,6 +66,7 @@ nav{
 	a{
 		text-decoration: none;
 		color: #000;
+		text-transform: uppercase;
 	}
 }
 
@@ -109,7 +110,7 @@ nav{
 	border-left: 2px solid #cbae86;
 	margin-left: -100px;
 	padding-left: 100px;
-	div{
+	.thisClass{
 		padding: 2em 0; 
 		display: block;
 		p{
@@ -118,6 +119,15 @@ nav{
 				font-weight: bold;
 				font-size: 1.25rem;	
 			}
+		}
+		button{
+			font-size: 1rem;
+			padding: .5rem;
+			border-radius: 5px;
+			background: #E92E2E; 
+			outline: none;
+			cursor: pointer;
+			float: right;
 		}
 	}
 	h1{ 
@@ -247,7 +257,7 @@ nav{
 // locations page
 /*locations styling*/
 .location-grid-container{
-  	grid-template-columns: repeat(auto-fit, minmax(600px,1fr));
+  	grid-template-columns: repeat(auto-fit, minmax(500px,1fr));
   	grid-gap: 2rem 1rem;
 }
 
@@ -318,13 +328,13 @@ table {
 	padding: 1rem 0; 
 }
 
-.hours, .address, .phone{
+.address, .phone{
 	flex: 1;
 }
 
-// contact page
+// team page
 .team-grid-container{
-	grid-template-columns: repeat(auto-fit, minmax(12rem,1fr));
+	grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
   	grid-gap: 2rem 1rem;
 }
 
@@ -350,3 +360,51 @@ table {
 .team__position{
 	font-size: .8rem;
 }
+
+
+// contact page
+.row{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 45%;
+}
+
+label{
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+input, textarea, select{
+	padding: .5rem;
+	font-size: .8rem;
+	margin-bottom: 1rem;
+	outline: none;
+}
+
+select{
+	outline: none;
+}
+
+.submitBtn{
+	width: 6rem;
+	margin: 1rem auto;
+	padding: .5rem 1rem;
+	font-size: 1rem;
+	border: none;
+	outline: none;
+	background: #cbae86;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
