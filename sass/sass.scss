@@ -110,14 +110,21 @@ nav{
 	border-left: 2px solid #cbae86;
 	margin-left: -100px;
 	padding-left: 100px;
-	.thisClass{
+	.menu-js{
 		padding: 2em 0; 
-		display: block;
-		p{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border: 1px solid white;
+		.menu-item-center{
+			flex: 1;
 			text-align: left;
-			&:nth-child(3){
-				font-weight: bold;
-				font-size: 1.25rem;	
+			p{
+				text-align: left;
+				&:nth-child(3){
+					font-weight: bold;
+					font-size: 1.25rem;	
+				}
 			}
 		}
 		button{
