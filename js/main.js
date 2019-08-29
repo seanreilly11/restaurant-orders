@@ -183,7 +183,8 @@ let allMenuItems = 	[
 	price: 21
 }
 ];
-var output = document.getElementById("menu-output");
+var menuoutput = document.getElementById("menu-output");
+var cartoutput = document.getElementById("cart-output");
 var brek = document.getElementById("brek");
 var lun = document.getElementById("lunch");
 var din = document.getElementById("din");
@@ -193,37 +194,38 @@ var dinnie = document.getElementById("dinnie");
 var btn = "";
 var items = [];
 var cart = [];
+var totalPrice = 0;
 
 
 // event listeners for buttons to print right menu
 brek.addEventListener("click",function(){
 	btn = "brek";
-	output.className = "fullsize"
+	menuoutput.className = "fullsize"
 	listMenu(breakfast);
 });
 lun.addEventListener("click",function(){
 	btn = "lun";
-	output.className = "fullsize"
+	menuoutput.className = "fullsize"
 	listMenu(lunch);
 });
 din.addEventListener("click",function(){
 	btn = "din";
-	output.className = "fullsize"
+	menuoutput.className = "fullsize"
 	listMenu(dinner);
 });
 brekkie.addEventListener("click",function(){
 	btn = "brek";
-	output.className = "fullsize"
+	menuoutput.className = "fullsize"
 	listMenu(breakfast);
 });
 lunchie.addEventListener("click",function(){
 	btn = "lun";
-	output.className = "fullsize"
+	menuoutput.className = "fullsize"
 	listMenu(lunch);
 });
 dinnie.addEventListener("click",function(){
 	btn = "din";
-	output.className = "fullsize"
+	menuoutput.className = "fullsize"
 	listMenu(dinner);
 });
 
@@ -257,21 +259,26 @@ function listMenu(menu) {
 		menuList.push("<div class='menu-js'><h2>" + menu[i].name + "</h2><div class='menu-item-center'><p>" + menu[i].description + "</p><p>$" + menu[i].price + "</p></div><button class='addToCartBtn'>Add To Cart</button></div>");
 	}
 	menuList = menuList.join("");
-	output.innerHTML = menuList;
+	menuoutput.innerHTML = menuList;
 
 	$(".addToCartBtn").click(function(e) {
 		items.push(e.target.parentNode.children['0'].innerText);
-		printMenuItem(items);
+		listCart(items);
 	});
-
 }
 
-function printMenuItem(items){
+// print menu function
+function listCart(items) {
+	document.getElementById("cart-output").style.right = "0";
+	let cartList = [];
+	cartList.push("<h2>Cart</h2>");
 	for (var i = 0; i < items.length; i++) {
-		console.log(allMenuItems.find(x => x.name === items[i]));
+		let thisItem = allMenuItems.find(x => x.name === items[i]);
+		cartList.push("<div class='cart-js'><div class='cart-item'><h3>" + thisItem.name + "</h3><p>$" + thisItem.price + "</p></div><button class='deleteItemBtn'>Delete</button></div>");
+		totalPrice += thisItem.price;
 	}
-}
+	cartList.push("<div class='orderNowBtnSec'><button class='orderNowBtn'>Order Now</button><h2>"+ totalPrice +"</h2></div>");
 
-function addToCart(){
-	console.log("Added to cart");
+	cartList = cartList.join("");
+	cartoutput.innerHTML = cartList;
 }

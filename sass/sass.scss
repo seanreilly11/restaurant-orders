@@ -80,9 +80,14 @@ nav{
 	background: transparent;
 	border: 2px solid #000;
 	padding: .8rem;
+	cursor: pointer;
+	&:focus{
+			outline: none;
+		}
 	a{
 		color: #000;
 		text-decoration: none;
+		
 	}
 }
 
@@ -176,7 +181,7 @@ nav{
 		list-style-type: none;
 		display: block;
 		text-align: center;
-		li{
+		a{
 			padding: .5rem;
 			color: #cbae86;
 			font-size: 2rem; 
@@ -259,6 +264,57 @@ nav{
 	background-image: radial-gradient(rgba(255,255, 255, .5), rgba(255, 255, 255, 0.4)),url("../images/dinner.jpg");
 	background-size: cover;
 	background-position: left center;
+}
+
+// cart section
+.popup-cart{
+	width: 300px;
+	height: 400px;
+	overflow-y: scroll;
+	position: fixed;
+	padding: 0; 
+	top: 50%;
+	right: -300px;
+	transform: translateY(-50%);
+	padding: .5rem;
+	background-color: #E92E2E;
+	transition: right 1s ease-in-out;
+}
+
+.cart-js{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: .5rem 0;
+	margin: 0;
+}
+
+.deleteItemBtn{
+	padding: .5rem;
+	background: transparent;
+	border-radius: 10px;
+	border: 2px solid black; 
+	font-size: 1rem;
+}
+
+.orderNowBtnSec{
+	position: sticky;
+	bottom: -10px;
+	width: 100%;
+	background: #E92E2E;
+	border: 1px solid black;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.orderNowBtn{
+	padding: 1rem;
+	font-size: 1rem;
+	background: transparent;
+	border: none;
+	width: 60%;
 }
 
 // locations page
@@ -385,6 +441,7 @@ table {
 label{
 	font-size: 1.2rem;
 	font-weight: 600;
+	margin-bottom: .2rem;
 }
 
 input, textarea, select{
