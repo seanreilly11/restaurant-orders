@@ -271,14 +271,32 @@ function listMenu(menu) {
 function listCart(items) {
 	document.getElementById("cart-output").style.right = "0";
 	let cartList = [];
-	cartList.push("<h2>Cart</h2>");
+	cartList.push("<div class='cart-top'><h2>Cart</h2><h2 id='closeBtn' class='closeCartBtn'>X</h2></div>");
 	for (var i = 0; i < items.length; i++) {
 		let thisItem = allMenuItems.find(x => x.name === items[i]);
 		cartList.push("<div class='cart-js'><div class='cart-item'><h3>" + thisItem.name + "</h3><p>$" + thisItem.price + "</p></div><button class='deleteItemBtn'>Delete</button></div>");
 		totalPrice += thisItem.price;
 	}
 	cartList.push("<div class='orderNowBtnSec'><button class='orderNowBtn'>Order Now</button><h2>"+ totalPrice +"</h2></div>");
-
 	cartList = cartList.join("");
 	cartoutput.innerHTML = cartList;
+
+	// close cart pop up
+	var closeBtn = document.getElementById("closeBtn");
+	closeBtn.addEventListener("click",function(){
+		document.getElementById("cart-output").style.right = "-300px";
+	});
+
+	// delete item button
+	$(".deleteItemBtn").click(function(e) {
+		let deletedItem = e.target.parentNode.children[0];
+		var index = cartList.indexOf(deletedItem);
+		// if (index > -1) {
+		//   cartList.splice(index, 1);
+		// }
+		console.log(index);
+		console.log(deletedItem);
+		console.log(cartList);
+		// deletedItem.classList.add("deleteMe");
+	});
 }

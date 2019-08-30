@@ -277,8 +277,26 @@ nav{
 	right: -300px;
 	transform: translateY(-50%);
 	padding: .5rem;
+	border-radius: 10px;
 	background-color: #E92E2E;
 	transition: right 1s ease-in-out;
+}
+.cart-top{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid black;
+	width: Calc(100% + 1rem);
+	margin-left: -.5rem;
+	padding-left: .5rem;
+	position: sticky;
+	top: -10px;
+	background: #E92E2E;
+}
+
+.closeCartBtn{
+	padding: 5px 10px 5px;
+	cursor: pointer;
 }
 
 .cart-js{
@@ -295,7 +313,12 @@ nav{
 	background: transparent;
 	border-radius: 10px;
 	border: 2px solid black; 
-	font-size: 1rem;
+	font-size: .8rem;
+	cursor: pointer;
+}
+
+.deleteMe{
+	display: none;
 }
 
 .orderNowBtnSec{
@@ -303,7 +326,6 @@ nav{
 	bottom: -10px;
 	width: 100%;
 	background: #E92E2E;
-	border: 1px solid black;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
@@ -315,6 +337,7 @@ nav{
 	background: transparent;
 	border: none;
 	width: 60%;
+	cursor: pointer;
 }
 
 // locations page
