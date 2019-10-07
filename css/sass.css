@@ -8,6 +8,7 @@
 html {
   font-size: 20px;
   width: 100vw;
+  min-width: 300px;
   scroll-behavior: smooth; }
 
 .banner {
@@ -23,15 +24,16 @@ header {
   padding: 0 2rem;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0)); }
 
-.wrapper {
+.wrapper, .team-wrapper {
   width: 100vw;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  padding: 2rem 0; }
 
 .container {
   width: 60%;
-  min-width: 1000px;
+  max-width: 1000px;
   margin-bottom: 0;
   display: flex;
   flex-direction: column;
@@ -58,6 +60,16 @@ nav {
     color: #000;
     text-transform: uppercase; }
 
+.mobile-bars {
+  display: flex;
+  align-items: center; }
+
+.mobile-nav-bars {
+  height: 80px;
+  display: none;
+  margin-right: 2rem;
+  cursor: pointer; }
+
 .active {
   border-bottom: 5px solid #cbae86; }
 
@@ -73,6 +85,27 @@ nav {
   .orderButton a {
     color: #000;
     text-decoration: none; }
+
+.orderButtonLarge {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  background: transparent;
+  border: 2px solid #000;
+  padding: 1rem;
+  margin: 2rem 0;
+  font-weight: 400;
+  cursor: pointer;
+  transition: border-radius .5s ease-in-out; }
+
+.orderButtonLarge:hover {
+  border-radius: 50%; }
+
+.orderButtonLarge:focus {
+  outline: none; }
+
+.orderButtonLarge a {
+  color: #000;
+  text-decoration: none; }
 
 .banner-wrapper {
   display: flex;
@@ -112,7 +145,7 @@ nav {
       font-size: 1rem;
       padding: .5rem;
       border-radius: 5px;
-      background: #E92E2E;
+      background: #cbae86;
       outline: none;
       cursor: pointer;
       float: right; }
@@ -230,7 +263,7 @@ nav {
   transform: translateY(-50%);
   padding: .5rem;
   border-radius: 10px;
-  background-color: #E92E2E;
+  background-color: #cbae86;
   transition: right 1s ease-in-out; }
 
 .cart-top {
@@ -243,7 +276,7 @@ nav {
   padding-left: .5rem;
   position: sticky;
   top: -10px;
-  background: #E92E2E; }
+  background: #cbae86; }
 
 .closeCartBtn {
   padding: 5px 10px 5px;
@@ -272,7 +305,7 @@ nav {
   position: sticky;
   bottom: -10px;
   width: 100%;
-  background: #E92E2E;
+  background: #cbae86;
   display: flex;
   justify-content: space-evenly;
   align-items: center; }
@@ -302,7 +335,7 @@ nav {
     transform: translateY(-0.5rem); }
 
 .location__name {
-  padding: 2rem;
+  padding: 2rem 0;
   width: 100%;
   color: white;
   text-align: center;
@@ -361,7 +394,7 @@ table {
   border-radius: 15px;
   transition: transform 1s; }
   .team-card:hover {
-    transform: translateY(-0.5rem); }
+    transform: translateY(-1rem); }
 
 .team__name {
   font-size: 1.5rem;
@@ -370,6 +403,16 @@ table {
 
 .team__position {
   font-size: .8rem; }
+
+.team-wrapper {
+  background: rgba(203, 174, 134, 0.6); }
+
+.team-para {
+  text-align: center;
+  opacity: 1; }
+
+.contact-link {
+  color: black; }
 
 .row {
   display: flex;
@@ -404,5 +447,24 @@ select {
   outline: none;
   background: #cbae86;
   cursor: pointer; }
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 16px; }
+
+  .team-card:hover {
+    transform: translateY(0); }
+
+  .location-card:hover {
+    transform: translateY(0); }
+
+  .location-grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); } }
+@media (max-width: 950px) {
+  nav {
+    display: none; }
+
+  .mobile-nav-bars {
+    display: block; } }
 
 /*# sourceMappingURL=sass.css.map */
