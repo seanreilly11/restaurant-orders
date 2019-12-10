@@ -1,5 +1,5 @@
 // menu items
-let breakfast = 	[
+const breakfast = 	[
 {
 	name:"French Toast",
 	description: "French Toast with blueberries",
@@ -31,7 +31,7 @@ let breakfast = 	[
 	price: 10
 }
 ];
-let lunch = 	[
+const lunch = 	[
 {
 	name:"Chips",
 	description: "Crispy chips with a side of aioli",
@@ -63,7 +63,7 @@ let lunch = 	[
 	price: 8
 }
 ];
-let dinner = 	[
+const dinner = 	[
 {
 	name:"Chips",
 	description: "Crispy chips with a side of aioli",
@@ -101,7 +101,7 @@ let dinner = 	[
 }
 ];
 
-let allMenuItems = 	[
+const allMenuItems = 	[
 {
 	name:"French Toast",
 	description: "French Toast with blueberries",
@@ -229,25 +229,10 @@ dinnie.addEventListener("click",function(){
 	listMenu(dinner);
 });
 
-// show hidden nav
-var outputTop = document.querySelector('#scrollTrig').getBoundingClientRect().top
-window.onscroll = function() {
-	var currentY = window.pageYOffset;
-	if (outputTop < currentY) {
-		document.getElementById("hidden-nav").style.opacity = "1";
-		document.getElementById("hidden-nav").classList.add("animationClassIn");
-		document.getElementById("hidden-nav").classList.remove("animationClassOut");
-	} else {
-		document.getElementById("hidden-nav").style.opacity = "0";
-		document.getElementById("hidden-nav").classList.remove("animationClassIn");
-		document.getElementById("hidden-nav").classList.add("animationClassOut");
-	}
-}
-
 // print menu function
 function listMenu(menu) {
 	document.getElementById("hidden-nav").style.opacity = "1";
-	let menuList = [];
+	var menuList = [];
 	if (btn === "brek") {
 		menuList.push("<h1>Breakfast</h1>");
 	}else if (btn === "lun") {
@@ -259,22 +244,41 @@ function listMenu(menu) {
 		menuList.push("<div class='menu-js'><h2>" + menu[i].name + "</h2><div class='menu-item-center'><p>" + menu[i].description + "</p><p>$" + menu[i].price + "</p></div><button class='addToCartBtn'>Add To Cart</button></div>");
 	}
 	menuList = menuList.join("");
+	$("#menu-output-wrapper").show();
 	menuoutput.innerHTML = menuList;
 
 	$(".addToCartBtn").click(function(e) {
 		items.push(e.target.parentNode.children['0'].innerText);
 		listCart(items);
 	});
+
+	// show hidden nav
+	var outputTop = document.querySelector('#scrollTrig').getBoundingClientRect().top
+	window.onscroll = function() {
+		var currentY = window.pageYOffset;
+		if (outputTop < currentY) {
+			document.getElementById("hidden-nav").style.opacity = "1";
+			document.getElementById("hidden-nav").classList.add("animationClassIn");
+			document.getElementById("hidden-nav").classList.remove("animationClassOut");
+		} else {
+			document.getElementById("hidden-nav").style.opacity = "0";
+			document.getElementById("hidden-nav").classList.remove("animationClassIn");
+			document.getElementById("hidden-nav").classList.add("animationClassOut");
+		}
+	}	
 }
 
 // print menu function
 function listCart(items) {
 	document.getElementById("cart-output").style.right = "0";
-	let cartList = [];
+	var cartList = [];
 	cartList.push("<div class='cart-top'><h2>Cart</h2><h2 id='closeBtn' class='closeCartBtn'>X</h2></div>");
 	for (var i = 0; i < items.length; i++) {
-		let thisItem = allMenuItems.find(x => x.name === items[i]);
+		var thisItem = allMenuItems.find(x => x.name === items[i]);
 		cartList.push("<div class='cart-js'><div class='cart-item'><h3>" + thisItem.name + "</h3><p>$" + thisItem.price + "</p></div><button class='deleteItemBtn'>Delete</button></div>");
+	}
+	for (var i = items.length-1; i < items.length; i++) {
+		var thisItem = allMenuItems.find(x => x.name === items[i]);
 		totalPrice += thisItem.price;
 	}
 	cartList.push("<div class='orderNowBtnSec'><button class='orderNowBtn'>Order Now</button><h2>"+ totalPrice +"</h2></div>");
@@ -289,14 +293,14 @@ function listCart(items) {
 
 	// delete item button
 	$(".deleteItemBtn").click(function(e) {
-		let deletedItem = e.target.parentNode.children[0];
-		var index = cartList.indexOf(deletedItem);
+		var deletedItem = e.target.parentNode.children[0];
+		// var index = cartList.indexOf(deletedItem);
 		// if (index > -1) {
 		//   cartList.splice(index, 1);
 		// }
-		console.log(index);
+		// console.log(index);
+		
 		console.log(deletedItem);
-		console.log(cartList);
 		// deletedItem.classList.add("deleteMe");
 	});
 }

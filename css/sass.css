@@ -12,7 +12,7 @@ html {
   scroll-behavior: smooth; }
 
 .banner {
-  background-image: radial-gradient(white, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.4)), url("../images/banner.jpg");
+  background-image: radial-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.4)), url("../images/banner.jpg");
   background-position: left top;
   background-size: cover;
   min-height: 100vh; }
@@ -26,15 +26,13 @@ header {
 
 .wrapper, .team-wrapper {
   width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 2rem 0; }
 
 .container {
   width: 60%;
   max-width: 1000px;
   margin-bottom: 0;
+  margin: auto;
   display: flex;
   flex-direction: column;
   padding: 1em 0; }
@@ -96,9 +94,6 @@ nav {
   font-weight: 400;
   cursor: pointer;
   transition: border-radius .5s ease-in-out; }
-
-.orderButtonLarge:hover {
-  border-radius: 50%; }
 
 .orderButtonLarge:focus {
   outline: none; }
@@ -170,6 +165,9 @@ nav {
 
 .fullsize {
   min-height: 100vh; }
+
+#menu-output-wrapper {
+  display: none; }
 
 /*hidden menu*/
 .hidden-nav {
@@ -394,7 +392,7 @@ table {
   border-radius: 15px;
   transition: transform 1s; }
   .team-card:hover {
-    transform: translateY(-1rem); }
+    transform: translateY(-0.5rem); }
 
 .team__name {
   font-size: 1.5rem;
