@@ -367,6 +367,7 @@ nav{
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
+	border-top: 1px solid black;
 }
 
 .orderNowBtn{
@@ -376,6 +377,8 @@ nav{
 	border: none;
 	width: 60%;
 	cursor: pointer;
+	text-decoration: none;
+	color: #000;
 }
 
 // locations page

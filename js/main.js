@@ -280,10 +280,12 @@ function listCart(items) {
 	for (var i = items.length-1; i < items.length; i++) {
 		var thisItem = allMenuItems.find(x => x.name === items[i]);
 		totalPrice += thisItem.price;
+		cart.push(thisItem.name);
 	}
-	cartList.push("<div class='orderNowBtnSec'><button class='orderNowBtn'>Order Now</button><h2>"+ totalPrice +"</h2></div>");
+	cartList.push("<div class='orderNowBtnSec'><a href='order.html' class='orderNowBtn'>Order Now</a ><h2>"+ totalPrice +"</h2></div>");
 	cartList = cartList.join("");
 	cartoutput.innerHTML = cartList;
+	console.log(cart);
 
 	// close cart pop up
 	var closeBtn = document.getElementById("closeBtn");
@@ -304,3 +306,7 @@ function listCart(items) {
 		// deletedItem.classList.add("deleteMe");
 	});
 }
+
+$("#cart").click(function(){
+	console.log(cart);
+})
